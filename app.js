@@ -18,7 +18,8 @@ dbConnection();
 // const cors = require("cors");
 const corsOptions = {
   origin: "*",
-  // credentials: true, // Allow credentials (cookies, authentication)
+  credentials: true, // Allow credentials (cookies, authentication)
+  optionSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
