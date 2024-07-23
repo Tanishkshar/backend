@@ -17,7 +17,7 @@ dbConnection();
 // };
 // const cors = require("cors");
 const corsOptions = {
-  origin: ["*"],
+  origin: "https://frontend-seven-gamma-67.vercel.app/",
   credentials: true, // Allow credentials (cookies, authentication)
 };
 
@@ -26,21 +26,21 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1/reservation", ReservationRouter);
-app.get("/", (req, res, next) => {
-  return res.status(200).json({
-    success: true,
-    message: "HELLO WORLD AGAIN",
-  });
-});
 // app.get("/", (req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", ["*"]);
-//   res.setHeader("Access-Control-Allow-Credentials", "true");
-//   res.setHeader("Access-Control-Max-Age", "1800");
-//   res.setHeader("Access-Control-Allow-Headers", "content-type");
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "PUT, POST, GET, DELETE, PATCH, OPTIONS"
-//   );
+//   return res.status(200).json({
+//     success: true,
+//     message: "HELLO WORLD AGAIN",
+//   });
 // });
+app.get("/", (req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", ["*"]);
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Max-Age", "1800");
+  res.setHeader("Access-Control-Allow-Headers", "content-type");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "PUT, POST, GET, DELETE, PATCH, OPTIONS"
+  );
+});
 app.use(errorMiddleware);
 export default app;
