@@ -17,7 +17,7 @@ dbConnection();
 // };
 // const cors = require("cors");
 const corsOptions = {
-  origin: "*",
+  origin: "https://frontend-seven-gamma-67.vercel.app",
   credentials: true, // Allow credentials (cookies, authentication)
   optionSuccessStatus: 200,
 };
